@@ -1,4 +1,4 @@
-# ReactAccordion.js [WIP]
+# ReactAccordion [WIP]
 
 Simple, yet performant and lightweight accordion component!
 
