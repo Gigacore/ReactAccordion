@@ -8,6 +8,6 @@ Simple, yet performant and lightweight accordion component!
 * [ ] Animations?
 * [ ] Documentations
 
-## The MIT License (MIT)
+## The MIT License
 
 MIT © 2018 Santhosh Sundar

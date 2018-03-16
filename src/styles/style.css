@@ -48,7 +48,7 @@ table {
 }
 
 hr {
-  border: 2px solid #666;
+  border: 1px solid #fff;
 }
 
 body {
@@ -81,7 +81,7 @@ header span {
 
 .accordion-item {
   overflow: hidden;
-  margin: 5px;
+  margin: 2px;
 }
 
 .accordion-item .accordion-title {
@@ -117,7 +117,8 @@ header span {
   transition: height 0.4s ease-in;
 }
 
-.accordion-item .accordion-content p {
+.accordion-item .accordion-content p,
+.accordion-item .accordion-content .accordion-content-wrapper {
   padding: 20px;
   line-height: 18px;
 }
