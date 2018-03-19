@@ -18,9 +18,19 @@ const accordionData = [
     "title": "Item 3",
     "content": "Accordion content 3"
   }
-]
+];
+
+const variations = () => {
+  return [
+    <h2>Default</h2>,
+    <Accordion />,
+    <hr />,
+    <h2>Expanded by default</h2>,
+    <Accordion expandAll={true} />
+  ]
+};
 
 ReactDOM.render(
-  <Accordion />,
+  variations(),
   document.getElementById("root")
 );

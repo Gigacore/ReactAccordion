@@ -1,7 +1,8 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
+/* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -15,70 +16,129 @@ article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline; }
-
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
-  display: block; }
-
+	display: block;
+}
 body {
-  line-height: 1; }
-
+	line-height: 1;
+}
 ol, ul {
-  list-style: none; }
-
+	list-style: none;
+}
 blockquote, q {
-  quotes: none; }
-
+	quotes: none;
+}
 blockquote:before, blockquote:after,
 q:before, q:after {
-  content: '';
-  content: none; }
-
+	content: '';
+	content: none;
+}
 table {
-  border-collapse: collapse;
-  border-spacing: 0; }
+	border-collapse: collapse;
+	border-spacing: 0;
+}
 
 hr {
-  border: 2px solid #666; }
+  border: 1px solid #fff;
+}
+
+h2 {
+  font-size: 20px;
+  font-weight: bold;
+  padding: 20px 0;
+  text-align: center;
+}
 
 body {
-  background: #3f51b5;
-  color: #fff;
+  background: #fff;
+  color: #000;
   font-family: 'Roboto', sans-serif;
-  font-size: 36px; }
+  font-size: 36px;
+}
 
-.counter {
-  display: flex;
+div#root {
+  width: 500px;
   margin: 0 auto;
-  height: 500px;
+}
+
+header {
+  text-align: center;
+  height: 100px;
+  display: flex;
   justify-content: center;
-  flex-direction: column;
-  align-items: center; }
-  .counter > div:first-child {
-    font-size: 100px; }
-  .counter a {
-    font-size: 16px;
-    text-transform: uppercase;
-    color: #fff;
-    text-decoration: none; }
-  .counter .controls {
-    display: flex;
-    flex-direction: row-reverse; }
-    .counter .controls > div {
-      min-width: 40px;
-      height: 40px;
-      text-align: center;
-      background: #fff;
-      color: #3f51b5;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 0 0 5px;
-      cursor: pointer; }
+  align-items: center;
+}
+
+header span {
+  color: #3f51b5;
+}
+
+.accordion-wrapper {
+  width: 100%;
+}
+
+.accordion-item {
+  overflow: hidden;
+  margin: 2px;
+}
+
+.accordion-item .accordion-title {
+  height: 40px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  background: #3f51b5;
+  position: relative;
+  color: #fff;
+}
+
+.accordion-item .accordion-title:after {
+  content: "\25BE";
+  height: 16px;
+  width: 16px;
+  position: absolute;
+  right: 16px;
+  top: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.accordion-item .accordion-content {
+  height: 0;
+  font-size: 14px;
+  background: #ede7f6;
+  -webkit-transition: height 0.4s ease-in;
+  -moz-transition: height 0.4s ease-in;
+  -o-transition: height 0.4s ease-in;
+  transition: height 0.4s ease-in;
+}
+
+.accordion-item .accordion-content p,
+.accordion-item .accordion-content .accordion-content-wrapper {
+  padding: 20px;
+  line-height: 18px;
+}
+
+.accordion-item.expanded .accordion-content {
+  height: auto;
+}
+
+.accordion-item.expanded .accordion-title:after {
+  transform: rotate(180deg);
+}
+
+/* Expand all accordions by default */
+.accordion-wrapper.expanded .accordion-item .accordion-content {
+  height: auto;
+}

@@ -51,6 +51,13 @@ hr {
   border: 1px solid #fff;
 }
 
+h2 {
+  font-size: 20px;
+  font-weight: bold;
+  padding: 20px 0;
+  text-align: center;
+}
+
 body {
   background: #fff;
   color: #000;
@@ -85,8 +92,8 @@ header span {
 }
 
 .accordion-item .accordion-title {
-  height: 50px;
-  font-size: 20px;
+  height: 40px;
+  font-size: 16px;
   display: flex;
   align-items: center;
   padding: 0 10px;
@@ -101,7 +108,7 @@ header span {
   width: 16px;
   position: absolute;
   right: 16px;
-  top: 18px;
+  top: 12px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -129,4 +136,9 @@ header span {
 
 .accordion-item.expanded .accordion-title:after {
   transform: rotate(180deg);
+}
+
+/* Expand all accordions by default */
+.accordion-wrapper.expanded .accordion-item .accordion-content {
+  height: auto;
 }

@@ -4,6 +4,7 @@ class AccordionItem extends Component {
 
   _expandAccordion = (e) => {
     const element = e.target;
+
     const expandedElements = document.querySelector(".expanded");
 
     element.parentNode.classList.add("expanded");
@@ -12,8 +13,6 @@ class AccordionItem extends Component {
 
   render() {
     const { accordionTitle, accordionBody, children } = this.props;
-
-    console.log(children);
 
     return (
       <div className="accordion-item">
