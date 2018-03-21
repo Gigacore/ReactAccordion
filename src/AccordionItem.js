@@ -5,7 +5,7 @@ class AccordionItem extends Component {
   _expandAccordion = (e) => {
     const element = e.target;
 
-    const expandedElements = document.querySelector(".expanded");
+    const expandedElements = element.closest(".accordion-wrapper").querySelector(".expanded");
 
     element.parentNode.classList.add("expanded");
     expandedElements && expandedElements.classList.remove("expanded");
