@@ -3,19 +3,21 @@ import React, { Component } from "react";
 class AccordionItem extends Component {
 
   _expandAccordion = (e) => {
-    const element = e.target;
 
+    const { allowMultiple } = this.props;
+
+    const element = e.target;
     const expandedElements = element.closest(".accordion-wrapper").querySelector(".expanded");
 
-    element.parentNode.classList.add("expanded");
-    expandedElements && expandedElements.classList.remove("expanded");
-  }
+    element.closest(".accordion-item").classList.add("expanded");
+    allowMultiple ? expandedElements && expandedElements.classList.remove("expanded") : null;
+  };
 
   render() {
-    const { accordionTitle, accordionBody, children } = this.props;
+    const { accordionTitle, accordionBody, children, expandAll } = this.props;
 
     return (
-      <div className="accordion-item">
+      <div className={`accordion-item ${expandAll ? ' expanded' : ''}`} >
         <div className="accordion-title" onClick={(e) => {this._expandAccordion(e)}}>
           <span>{accordionTitle}</span>
         </div>
@@ -32,7 +34,7 @@ class AccordionItem extends Component {
         </section>
       </div>
     )
-  }
-}
+  };
+};
 
 export default AccordionItem;

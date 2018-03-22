@@ -100,6 +100,7 @@ header span {
   background: #3f51b5;
   position: relative;
   color: #fff;
+  cursor: pointer;
 }
 
 .accordion-item .accordion-title:after {
@@ -136,9 +137,4 @@ header span {
 
 .accordion-item.expanded .accordion-title:after {
   transform: rotate(180deg);
-}
-
-/* Expand all accordions by default */
-.accordion-wrapper.expanded .accordion-item .accordion-content {
-  height: auto;
 }
