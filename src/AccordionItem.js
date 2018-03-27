@@ -5,12 +5,15 @@ class AccordionItem extends Component {
   _expandAccordion = (e) => {
 
     const { allowMultiple } = this.props;
-
     const element = e.target;
-    const expandedElements = element.closest(".accordion-wrapper").querySelector(".expanded");
+    const expandedElements = allowMultiple ? element.closest(".accordion-item") : element.closest(".accordion-wrapper").querySelector(".expanded");
 
-    element.closest(".accordion-item").classList.add("expanded");
-    allowMultiple ? expandedElements && expandedElements.classList.remove("expanded") : null;
+    if(allowMultiple) {
+      expandedElements.classList.contains("expanded") ? expandedElements.classList.remove("expanded") : expandedElements.classList.add("expanded")
+    } else {
+      element.closest(".accordion-item").classList.add("expanded");
+      expandedElements && expandedElements.classList.remove("expanded");
+    }
   };
 
   render() {

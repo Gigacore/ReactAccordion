@@ -43,7 +43,7 @@ class Accordion extends Component {
 
 Accordion.defaultProps = {
   'expandAll': false,
-  'allowMultiple': true
+  'allowMultiple': false
 }
 
 export default Accordion;

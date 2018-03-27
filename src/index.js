@@ -26,7 +26,10 @@ const variations = () => {
     <Accordion />,
     <hr />,
     <h2>Expanded by default</h2>,
-    <Accordion expandAll={true} />
+    <Accordion
+      expandAll={true}
+      allowMultiple={true}
+    />
   ]
 };
 
