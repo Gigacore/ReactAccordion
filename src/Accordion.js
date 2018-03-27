@@ -3,9 +3,18 @@ import AccordionItem from "./AccordionItem";
 
 class Accordion extends Component {
 
+  _visibilityControllers = () => {
+    return (
+      <div className="visiblity-controller">
+        <div className="expand-all"><span>Expand All</span></div>
+        <div className="collapse-all"><span>Collapse All</span></div>
+      </div>
+    )
+  }
+
   render() {
 
-    const { data, expandAll, allowMultiple } = this.props;
+    const { data, expandAll, allowMultiple, controllers, controllerPosition } = this.props;
 
     const config = {
       expandAll,
@@ -14,6 +23,7 @@ class Accordion extends Component {
 
     return (
       <div className={`accordion-wrapper`}>
+        {controllers && this._visibilityControllers()}
         <AccordionItem
           {...config}
           accordionTitle="Accordion with simple text"
@@ -36,6 +46,7 @@ class Accordion extends Component {
           accordionTitle="Accordion Item 3"
           accordionBody="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
         />
+        {controllers && this._visibilityControllers()}
       </div>
     );
   }
@@ -43,7 +54,9 @@ class Accordion extends Component {
 
 Accordion.defaultProps = {
   'expandAll': false,
-  'allowMultiple': false
+  'allowMultiple': false,
+  'controllers': false,
+  'controllerPosition': 'top'
 }
 
 export default Accordion;

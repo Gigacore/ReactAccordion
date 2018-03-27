@@ -86,6 +86,19 @@ header span {
   width: 100%;
 }
 
+.accordion-wrapper .visiblity-controller {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 13px;
+  text-transform: uppercase;
+  padding: 12px;
+  cursor: pointer;
+}
+
+.accordion-wrapper .visiblity-controller div {
+  margin: 0 0 0 10px;
+}
+
 .accordion-item {
   overflow: hidden;
   margin: 2px;
@@ -138,3 +151,5 @@ header span {
 .accordion-item.expanded .accordion-title:after {
   transform: rotate(180deg);
 }
+
+

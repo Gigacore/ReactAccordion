@@ -29,6 +29,12 @@ const variations = () => {
     <Accordion
       expandAll={true}
       allowMultiple={true}
+    />,
+    <hr />,
+    <h2>With Controllers</h2>,
+    <Accordion
+      allowMultiple={true}
+      controllers={true}
     />
   ]
 };
