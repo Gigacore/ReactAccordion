@@ -4,7 +4,12 @@ Simple, yet performant and lightweight accordion component!
 
 ## TODOs
 
-* [ ] Variations
+#### Variations
+* [x] Default behavior.
+* [x] Expand All on load.
+* [ ] Selective accordion item expand state
+
+#### Others
 * [ ] Animations?
 * [ ] Documentations
 
