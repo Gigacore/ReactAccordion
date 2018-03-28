@@ -1,27 +1,13 @@
 import React, { Component } from "react";
+import { expandAccordion } from "./Accordion";
 
 class AccordionItem extends Component {
-
-  _expandAccordion = (e) => {
-
-    const { allowMultiple } = this.props;
-    const element = e.target;
-    const expandedElements = allowMultiple ? element.closest(".accordion-item") : element.closest(".accordion-wrapper").querySelector(".expanded");
-
-    if(allowMultiple) {
-      expandedElements.classList.contains("expanded") ? expandedElements.classList.remove("expanded") : expandedElements.classList.add("expanded")
-    } else {
-      element.closest(".accordion-item").classList.add("expanded");
-      expandedElements && expandedElements.classList.remove("expanded");
-    }
-  };
-
   render() {
-    const { accordionTitle, accordionBody, children, expandAll } = this.props;
+    const { accordionTitle, accordionBody, children } = this.props;
 
     return (
-      <div className={`accordion-item ${expandAll ? ' expanded' : ''}`} >
-        <div className="accordion-title" onClick={(e) => {this._expandAccordion(e)}}>
+      <div className={`accordion-item`} >
+        <div className="accordion-title" onClick={(e) => {expandAccordion(e)}}>
           <span>{accordionTitle}</span>
         </div>
         <section className="accordion-content">
