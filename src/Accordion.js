@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import AccordionItem from "./AccordionItem";
 
-
 class Accordion extends Component {
 
   constructor(props) {
@@ -10,7 +9,7 @@ class Accordion extends Component {
 
   state = {
     controllerText: "expand"
-  }
+  };
 
   componentDidMount() {
     const { expandAll } = this.props;
@@ -40,7 +39,6 @@ class Accordion extends Component {
   };
 
   render() {
-
     const { data, allowMultiple, controllers, controllerPosition } = this.props;
 
     return (
@@ -69,21 +67,25 @@ class Accordion extends Component {
       </div>
     );
   }
-}
+};
 
 Accordion.defaultProps = {
   'expandAll': false,
   'allowMultiple': false,
   'controllers': false,
   'controllerPosition': 'top'
-}
+};
 
 export const expandAccordion = (e, allowMultiple) => {
   const element = e.target;
-  const expandedElements = allowMultiple ? element.closest(".accordion-item") : element.closest(".accordion-wrapper").querySelector(".expanded");
+  const expandedElements = allowMultiple ?
+    element.closest(".accordion-item") :
+    element.closest(".accordion-wrapper").querySelector(".expanded");
 
   if(allowMultiple) {
-    expandedElements.classList.contains("expanded") ? expandedElements.classList.remove("expanded") : expandedElements.classList.add("expanded")
+    expandedElements.classList.contains("expanded") ?
+      expandedElements.classList.remove("expanded") :
+      expandedElements.classList.add("expanded")
   } else {
     element.closest(".accordion-item").classList.add("expanded");
     expandedElements && expandedElements.classList.remove("expanded");
