@@ -26,6 +26,7 @@ class Accordion extends Component {
     )
   };
 
+
   _toggleExpandState = () => {
     const accordionItems = this.__accordion.querySelectorAll(".accordion-item");
 
@@ -74,22 +75,6 @@ Accordion.defaultProps = {
   'allowMultiple': false,
   'controllers': false,
   'controllerPosition': 'top'
-};
-
-export const expandAccordion = (e, allowMultiple) => {
-  const element = e.target;
-  const expandedElements = allowMultiple ?
-    element.closest(".accordion-item") :
-    element.closest(".accordion-wrapper").querySelector(".expanded");
-
-  if(allowMultiple) {
-    expandedElements.classList.contains("expanded") ?
-      expandedElements.classList.remove("expanded") :
-      expandedElements.classList.add("expanded")
-  } else {
-    element.closest(".accordion-item").classList.add("expanded");
-    expandedElements && expandedElements.classList.remove("expanded");
-  }
 };
 
 export default Accordion;
